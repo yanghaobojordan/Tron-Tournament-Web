@@ -1,0 +1,168 @@
+<div id="container">
+
+<div id="header">
+<h1>Tron-41 Tournament Leaderboard</h1>
+</div>
+
+<div id="list">
+<table id="leaderboard" class="table table-hover">
+    <thead class="thead">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Profile Pic</th>
+      <th scope="col">Player</th>
+      <th scope="col">Score</th>
+      <th scope="col">ELO</th>
+    </tr>
+  </thead>
+  <tbody id="leaderboardBody" class="tbody"> </tbody>
+</table>
+</div>
+</div>
+<!-- Footer -->
+<footer class="page-footer font-small pt-4 my-footer">
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+        <!-- Content -->
+        <h5 class="text-uppercase">Get Started</h5>
+        <p>Want To Know More About Our Games?</p>
+      </div>
+      <!-- Grid column -->
+      <hr class="clearfix w-100 d-md-none pb-3">
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        <!-- Links -->
+        <h5 class="text-uppercase">CSCI1410@Brown</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="http://cs.brown.edu/courses/csci1410/">CSCI1410@Brown</a>
+          </li>
+          <li>
+            <a href="http://cs.brown.edu/courses/csci1410/assignments/tron.pdf">Final Project</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Grid column -->
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        <!-- Links -->
+        <h5 class="text-uppercase">Tron</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://en.wikipedia.org/wiki/Tron#Tron:_Legacy">Tron 1982</a>
+          </li>
+
+        </ul>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="http://cs.brown.edu/courses/csci1320/"> CSCI1320@Brown</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<style>
+      h1 {
+        font-size: 4vw;
+    }
+    #container{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        /*font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;*/
+    }
+    #header{
+        height: 100px;
+        line-height: 100px;
+        text-decoration: underline;
+        text-align: center;
+        font-size: 3.2vw;
+        color: rgb(255, 40, 10);
+              color: #39F3FF;
+
+    }
+    #list {
+      width: 80%;
+      align-self: center;
+      text-align: center;
+    }
+    .profile-img{
+      /*
+        max-width: 30%;
+        max-height: 10%;
+        */
+        max-width: 30%;
+    }
+    .table > thead > tr > th{
+    border-top:transparent;
+
+    border-bottom:1px solid rgb(255, 40, 10);
+}
+    .table > tbody > tr > td{
+     vertical-align: middle;
+     padding: 20px;
+
+  }
+
+      .table > tbody > tr:hover{
+     vertical-align: middle;
+     padding: 20px;
+      background-color: #343a40!important;
+      color: white;
+
+
+  }
+  .table > tbody > tr > th {
+    vertical-align: middle;
+    font-size: 2.8vw;
+
+  }
+    
+    .tbody{
+        /*font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+        /*background-color: lightblue;*/
+
+    }
+    
+    .thead {
+      text-decoration: underline;
+      font-size: 2.5vw;
+      
+
+    }
+    
+    .thead-dark{
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    
+    .table{
+        font-size: 2vw;
+        color: whitesmoke;
+    }
+
+    
+    .tbody:hover{
+      cursor: pointer;
+    }
+
+    a{
+      color:#85d7f8;
+    }
+    a:hover {
+    color: white;
+    text-decoration: none;
+}
+</style>
+
+<script src="/js/leaderboard.js"></script>

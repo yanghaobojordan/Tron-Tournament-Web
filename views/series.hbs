@@ -1,0 +1,301 @@
+<body>
+
+    <div id="hiddenDiv" style="display: none">
+        <div id="replayLinkDiv" style="display: none"> {{replayLink}}</div>
+        <div id="playerOneDiv" style="display: none"> {{playerOne}}</div>
+        <div id="winCountDiv" style="display: none"> {{winCount}}</div>
+        <div id="playerTwoDiv" style="display: none"> {{playerTwo}}</div>
+        <div id="winnerDiv" style="display: none"> {{winner}}</div>
+    </div>
+
+    <div id="container">
+    <div>
+        <a id="back-btn" class="btn btn-outline-light" onclick="goBack()" role="button">←　Back to Player Profile</a>
+    </div>
+        <div id="replayDetails">
+        <h1 style="color:white; text-decoration: underline;">Match Replay</h1>
+        <p>A player loses by colliding with a barrier or one of the innate walls of the board. Powerups are indicated by an * on the board. 
+            A player will automatically obtain a powerup by stepping on it. Individual replays can be reset using the 'R' button on the right of each board.</p>
+
+        <h2>
+            <span class="p1">{{playerOne}}</span>  v. <span class="p2">{{playerTwo}} </span>
+        </h2>
+        <h3>
+            <span class="p1" id="playerOneNumWins"></span>: <span class="p2" id="playerTwoNumWins"></spanclass="p1">
+        </h3>
+        </div>
+    <div id="replay">
+        {{{board}}}
+    </div>
+        </div>
+        <!-- Footer -->
+<footer class="page-footer font-small pt-4 my-footer">
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left">
+    <!-- Grid row -->
+    <div class="row">
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+        <!-- Content -->
+        <h5 class="text-uppercase">Get Started</h5>
+        <p>Want To Know More About Our Games?</p>
+      </div>
+      <!-- Grid column -->
+      <hr class="clearfix w-100 d-md-none pb-3">
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        <!-- Links -->
+        <h5 class="text-uppercase">CSCI1410@Brown</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="http://cs.brown.edu/courses/csci1410/">CSCI1410@Brown</a>
+          </li>
+          <li>
+            <a href="http://cs.brown.edu/courses/csci1410/assignments/tron.pdf">Final Project</a>
+          </li>
+        </ul>
+      </div>
+      <!-- Grid column -->
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+        <!-- Links -->
+        <h5 class="text-uppercase">Tron</h5>
+        <ul class="list-unstyled">
+          <li>
+            <a href="https://en.wikipedia.org/wiki/Tron#Tron:_Legacy">Tron 1982</a>
+          </li>
+
+        </ul>
+      </div>
+      <!-- Grid column -->
+    </div>
+    <!-- Grid row -->
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="http://cs.brown.edu/courses/csci1320/"> CSCI1320@Brown</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+
+</body>
+<style>
+@font-face {
+    font-family: 'Atari Classic Chunky';
+    src: url(./assets/atari_class_chunky.ttf);
+}
+
+@font-face {
+    font-family: 'Andale Mono';
+    src: url(./assets/andale_mono.ttf);
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Andale Mono';
+    text-align: center;
+}
+
+
+header {
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    color: #E06800;
+    font-family: 'VT323','Atari Classic Chunky';
+    font-size: 4vw;
+    margin-bottom: 15px;
+    /*text-transform: uppercase;*/
+}
+
+h4 {
+    text-align: center;
+}
+
+p {
+    font-size: 2.5vh;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    margin-bottom: 18px;
+}
+
+    a{
+      color: #85d7f8;
+    }
+
+a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.p1 {
+    color: #BAD650;
+    color:rgb(32, 206, 230);
+    font-weight: bold;
+}
+
+.p2 {
+    color: #FFB938;        
+    color: #ff5722;
+    font-weight: bold;
+}
+
+.vs {
+    font-size: 24px;
+}
+
+.score {
+    font-size: 36px;
+}
+
+.vs .p1, .vs .p2, .score .p1, .score .p2 {
+    font-family: 'Atari Classic Chunky';
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: calc(17 * 20px);
+}
+
+.board > span {
+    /* display: inline-block; */
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.board > span > p {
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    line-height: 20px;
+    font-weight: 700;
+    color: black;
+}
+
+.game + p {
+    margin-top: 5px;
+}
+
+.game-wrapper {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.game-wrapper .restart {
+    position: absolute;
+    top: calc(17 * 20px - 30px);
+    left: calc(50% + 9 * 20px);
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color:#b3b3c9;
+}
+
+.game-wrapper .restart:hover {
+    background-color: white;
+}
+
+.wall {
+    background-color: #b3b3c9;
+}
+
+.barrier {
+    background-color: #6b6b7c;
+}
+
+.player1 {
+    background-color: #BAD650;
+}
+
+.player2 {
+    background-color: #FFB938;
+}
+
+.trap {
+    background-color: #b57cd2;
+}
+/* 
+.armor {
+    background-color: purple;
+}
+
+.speed {
+    background-color: green;
+}
+
+.bomb {
+    background-color: red;
+} */
+
+#loading {
+    width: 40vw;
+    height: auto;
+    margin-bottom: 2000px;
+}
+
+#container {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+
+}
+
+#replayDetails {
+    width: 75%;
+    border-bottom: 1.5px solid rgb(32, 206, 230);
+    border-bottom: 1.5px dashed white;
+    margin: 0 auto 3% auto;
+
+
+
+}
+
+
+
+/*body{
+    background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/fs/144dd349848789.58c0373d1982f.jpg');
+    background-size: 100%;
+    color: rgb(19, 9, 9);
+    box-sizing: border-box;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+#container{
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 50px;
+    border: 3px dashed rgb(32, 206, 230);
+    text-align: center;
+}
+p{
+    font-size: 5vw;
+} */
+</style>
+
+<script src="/js/series.js"></script>
+<script>
+    function goBack() {
+  window.history.back();
+}
+</script>
